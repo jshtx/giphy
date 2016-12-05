@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
-var topics = ["dog", "cat", "walrus"];
+var topics = ["dog", "cat", "walrus", "elephant", "fish", "wolf", "giraffe",
+			  "ladybug", "crab", "whale", "snake", "owl", "deer", "ram",
+			  "lion", "buffalo", "rhino", "lizard", "antelope"];
 
 function renderButtons() {
 
@@ -55,7 +57,7 @@ function showGIFS() {
 				//console.log("animal" + animalGIF);
             	for (var i = 0; i <= 10; i++) {
             
-            	var gifDiv = $("<div>");
+            	var gifDiv = $("<div class='gifDiv'>");
 
             	var rating = animalGIF[i].rating;
             	//console.log(rating);
@@ -66,17 +68,17 @@ function showGIFS() {
             	animalImage.attr("data-still", animalGIF[i].images.fixed_height_still.url);
             	animalImage.attr("data-animate", animalGIF[i].images.fixed_height.url);
             	animalImage.attr("data-state", "still")
-            	gifDiv.prepend(p);
-            	gifDiv.prepend(animalImage);
+            	gifDiv.append(p);
+            	gifDiv.append(animalImage);
 
-            	$(".gifsDisplay").prepend(gifDiv);
+            	$(".gifsDisplay").append(gifDiv);
           }
           });
 
 		}
 
 
-$("document").on("click", ".moveAndStop", function() {
+function animate() {
      console.log("test");
       var state = $(this).attr("data-state");
       console.log(state);
@@ -94,7 +96,12 @@ $("document").on("click", ".moveAndStop", function() {
         
       }
 
-    });
+    };
+
+
+$(document).on("click", ".moveAndStop", animate);
+
+
 
 $(document).on("click", ".animal", showGIFS);
 

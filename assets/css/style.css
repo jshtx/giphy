@@ -1,5 +1,6 @@
-body {
-	background-color: #F8B9B9;
+* { 
+  margin: 0; 
+  padding: 0; 
 }
 
 .buttons {
@@ -8,4 +9,16 @@ body {
 
 .btn-info {
 	margin: 10px;
+}
+
+.gifDiv {
+	text-align: center;
+	float: left;
+	margin: 10px;
+	
+	
+}
+
+.submitButton {
+	font-weight: 50px;
 }
