@@ -37,10 +37,6 @@ $("#animalSubmit").on("click", function(event) {
 
           renderButtons();
 
-          // Here we construct our URL
-          var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC";
-          
-
       });
 
 function showGIFS() {
@@ -49,7 +45,7 @@ function showGIFS() {
 
 				var choice = $(this).data("name");
 
-         		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + choice + "&api_key=dc6zaTOxFJmzC";
+         		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + choice + "&api_key=dc6zaTOxFJmzC";
           
 				$.ajax({ url: queryURL, method: "GET"}).done(function(response) {
 
